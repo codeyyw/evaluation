@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- UserMapper.xml文件 -->
+
+<!-- namespace命名空间，作用就是对sql进行分类化管理，即sql隔离 注意：使用mapper代理方法开发的话，namespace就有特殊重要的作用了,namespace=mapper接口地址 -->
+<mapper namespace="com.yyw.dao.JudgeMapper">
+
+	<resultMap type="judge" id="findPros">
+		<id property="judge_id" column="judge_id" />
+		<result column="judge_name" property="judge_name" />
+		<result column="judge_password" property="judge_password" />
+		<result column="judge_profession" property="judge_profession" />
+		<result column="judge_star" property="judge_star" />
+		<!-- 多表关联映射 -->
+		<collection property="projects" ofType="project">
+			<id property="project_id" column="project_id" />
+			<result column="c_id" property="c_id" />
+			<result column="project_name" property="project_name" />
+			<result column="project_type" property="project_type" />
+			<result column="project_team" property="project_team" />
+			<result column="project_key" property="project_key" />
+			<result column="project_patent" property="project_patent" />
+			<result column="project_product" property="project_product" />
+			<result column="project_service" property="project_service" />
+			<result column="project_level" property="project_level" />
+		</collection>
+	</resultMap>
+
+
+	<insert id="insertJudge" parameterType="judge">
+
+		<selectKey keyProperty="judge_id" order="AFTER"
+			resultType="int">
+			select LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO
+		judge(judge_name,judge_password,judge_profession,judge_star)
+		VALUES(#{judge_name},#{judge_password},#{judge_profession},#{judge_star})
+	</insert>
+
+	<select id="selectAll" resultType="judge">
+		select * from judge
+	</select>
+
+
+	<select id="findByName" parameterType="hashMap"
+		resultType="judge">
+		SELECT * FROM judge
+		WHERE
+		judge_name=#{loginName}
+		AND
+		judge_password=#{loginPassword}
+	</select>
+
+	<update id="updateLevel" parameterType="project">
+		update project set
+		project_level=#{project_level} where project_id=#{project_id}
+	</update>
+
+	<select id="findProjects" parameterType="judge"
+		resultMap="findPros">
+		SELECT * FROM judge j,project p,jp
+		WHERE j.judge_id = jp.j_id
+		AND p.project_id = jp.p_id
+		AND judge_id = #{judge_id}
+	</select>
+
+
+
+	<select id="getScores" parameterType="project"
+		resultType="scores">
+		SELECT * FROM scores where p_id=#{project_id}
+	</select>
+
+
+	<insert id="insertScore" parameterType="hashMap">
+		<selectKey keyProperty="id" order="AFTER" resultType="int">
+			select
+			LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO
+		scores(p_id,score1)
+		VALUES(#{projectId},#{score1})
+	</insert>
+
+
+	<update id="updateScores" parameterType="scores">
+		update scores set
+		score1=#{score1}, score2=#{score2}, score3=#{score3},
+		score4=#{score4}, score5=#{score5}, score6=#{score6},
+		score7=#{score7}, score8=#{score8}, score9=#{score9},
+		score10=#{score10} where id=#{id}
+
+	</update>
+
+	<insert id="insertJP" parameterType="hashMap">
+
+		<selectKey keyProperty="id" order="AFTER" resultType="int">
+			select
+			LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO
+		jp(p_id,j_id)
+		VALUES(#{pId},#{jId})
+	</insert>
+</mapper>

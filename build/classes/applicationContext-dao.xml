@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<!-- 配置 读取properties文件 jdbc.properties -->
+	<context:property-placeholder
+		location="classpath:jdbc.properties" />
+		
+	<!-- <bean id="propertyConfigurer"
+
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+        <property name="location" value="classpath:jdbc.properties" />
+
+    </bean> -->
+
+	<!-- 配置 数据源 ognl表达式 -->
+	<!-- class="com.alibaba.druid.pool.DruidDataSource" -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+	
+ 		<!-- 驱动 -->
+		<!--  <property name="driverClassName" value="${jdbc.driver}" />
+		url
+		<property name="url" value="${jdbc.url}" />
+		用户名
+		<property name="username" value="${jdbc.username}" />
+		密码
+		<property name="password" value="${jdbc.password}" />
+		<property name="initialSize" value="${db.initPoolSize}" />
+		<property name="minIdle" value="${db.minPoolSize}" />
+		<property name="maxActive" value="${db.maxPoolSize}" /> -->
+		<!-- 驱动 -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<!-- url -->
+		<property name="url" value="jdbc:mysql://localhost:3307/evaluation?characterEncoding=utf-8" />
+		<!-- 用户名 -->
+		<property name="username" value="root" />
+		<!-- 密码 -->
+		<property name="password" value="root" />
+		<property name="initialSize" value="3" />
+		<property name="minIdle" value="5" />
+		<property name="maxActive" value="20" />
+	</bean>
+
+
+	<!-- 配置 Mybatis的工厂 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 数据源 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 配置Mybatis的核心 配置文件所在位置 -->
+		<property name="configLocation"
+			value="classpath:SqlMapConfig.xml" />
+			
+		<!-- mapper映射 -->
+
+		<!-- 配置 1：原始Dao开发 接口实现类 Mapper.xml 三个 2：接口开发 接口 不写实现类 Mapper.xml 二个 （UserDao、ProductDao 
+			、BrandDao。。。。。。。） 3：接口开发、并支持扫描 cn.itcast.core.dao(UserDao。。。。。） 写在此包下即可被扫描到 -->
+		<!--<property name="mapperLocations" value="classpath:com/yyw/mapper/*.xml"></property>  -->
+	</bean>
+
+
+	<!-- 自动扫描包，并且生成mapper的实现类，生成的bean的名称为mapper接口的首字母小写 -->
+	<!-- mapper批量扫描包，从mapper包中扫描出mapper接口，自动创建代理对象并且在spring容器中注册 --> 
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.yyw.dao" />
+		<property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory"></property>
+	</bean>
+
+</beans>

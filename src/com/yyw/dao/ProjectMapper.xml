@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yyw.dao.ProjectMapper">
+
+<resultMap type="project" id="findJudges">
+		<id property="project_id" column="project_id" />
+		<result column="c_id" property="c_id" />
+		<result column="project_name" property="project_name" />
+		<result column="project_type" property="project_type" />
+		<result column="project_team" property="project_team" />
+		<result column="project_key" property="project_key" />
+		<result column="project_patent" property="project_patent" />
+		<result column="project_product" property="project_product" />
+		<result column="project_service" property="project_service" />
+		<result column="project_level" property="project_level" />
+
+		<!-- 多表关联映射 -->
+		<collection property="judges" ofType="judge">
+			<id property="judge_id" column="judge_id" />
+			<result column="judge_name" property="judge_name" />
+			<result column="judge_password" property="judge_password" />
+			<result column="judge_profession" property="judge_profession" />
+			<result column="judge_star" property="judge_star" />
+		</collection>
+	</resultMap>
+
+	<insert id="insertProject" parameterType="hashMap">
+		<selectKey keyProperty="project_id" order="AFTER"
+			resultType="int">
+			select LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO
+		project(project_name,c_id,project_type,project_team,project_key,project_patent,project_product,project_service,project_level)
+		VALUES(#{project.project_name},#{contributor_id},#{project.project_type},#{project.project_team},#{project.project_key},#{project.project_patent},#{project.project_product},#{project.project_service},#{project.project_level})
+	</insert>
+
+	<select id="selectAll" resultType="project">
+		select * from project
+	</select>
+	
+	<select id="selectByType" parameterType="String" resultType="project">
+		select * from project where project_type=#{type}
+	</select>
+	<update id="updateUpload" parameterType="contributor">
+		update contributor set
+		contributor_isUpload=#{contributor_isUpload} where contributor_id=#{contributor_id}
+	</update>
+	
+	<select id="selectById" parameterType="int" resultType="project">
+		select * from project where project_id=#{projectId}
+	</select>
+	
+	<update id="updateProLevel" parameterType="project">
+		update project set project_level=#{project_level} where project_id=#{project_id}
+	</update>
+	
+	<select id="selectByTypeOrder" parameterType="String" resultType="project">
+		select * from project where project_type=#{type} ORDER BY project_level DESC
+	</select>
+</mapper>

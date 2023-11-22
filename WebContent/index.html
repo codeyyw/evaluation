@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>鲲云科技｜提供下一代人工智能计算平台</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,">
+<meta name="description" content="鲲云自主研发的定制数据流(CAISA）架构，多层并行计算方式具有高度可拓展性，基于CAISA技术推出的“星空”和“雨人”芯片，相较传统计算方式性能功耗比提升10倍，为物联网前端、边缘端和后端服务器提供真实可靠的计算加速，RainBuilder编译器，依托Rainbuilder端到端自动编译工具链，我们建立免费开放的鲲云AI开发平台，支持像用CPU、GPU一样使用CAISA架构，支持多数主流深度学习算法，实现算法到硬件的零门槛应用开发">
+<meta name="keywords" content="鲲云，鲲云科技，CAISA RainBuilder，高性能的人工智能芯片和全球首款基于数据流引擎的AI开发平台，高性能架构芯片，高通用性编译器，平台解决方案，下一代人工智能计算平台，鲲云高校合作计划，CAISA，陆永青，牛昕宇，蔡权雄，肖梦秋">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/swiper.min.css">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/index.css">
+<script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?dc7dedc38bbf7f095a2f258e89023bba";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<!--[if lt IE 10]>
+亲，您的浏览器太low啦，且存在安全风险，请更新浏览器或者安装Chrome浏览器！
+<style>body{font-size:25px;line-height:500px;text-align:center;}body *{display:none;}</style>
+<![endif]-->
+<div class="main-content">
+<div class="popup-bg"></div>
+<section class="header">
+<div class="navbar-notmobile d-none d-md-block">
+<div class="container">
+<h1 class="text-hide"><a href="http://www.corerain.com">鲲云科技</a></h1>
+<ul class="top-menu">
+<li>
+<a href="javascript:;">核心技术</a>
+<div class="sub-nav nav-special">
+<ul>
+<li>CAISA</li>
+<li><a href="/caisa">自主芯片底层架构，为AI提供算力支撑</a></li>
+</ul>
+<ul>
+<li>RainBuilder</li>
+<li><a href="/RainBuilder">端到端自动编译工具链，支持AI应用落地</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="javascript:;">产品</a>
+<div class="sub-nav nav-special">
+<ul>
+<li>基于CAISA架构的芯片板卡</li>
+<li><a href="/product">星空</a></li>
+<li><a href="/product">雨人</a></li>
+</ul>
+<ul>
+<li>基于RainBuilder技术的开发平台</li>
+<li><a href="/platform">鲲云AI应用开发平台</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/solution">解决方案</a>
+<div class="sub-nav">
+<ul>
+<li><a href="/solution#city">智慧城市</a></li>
+<li><a href="/solution#aerospace">航空航天</a></li>
+<li><a href="/solution#Fin-tech">智慧金融</a></li>
+<li><a href="/solution#monitoring">工业监控</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="/academic">研究院</a>
+<div class="sub-nav">
+<ul>
+<li><a href="/academic#research-fields">研究领域</a></li>
+<li><a href="/academic#collaboration">科研合作</a></li>
+<li><a href="/academic#events">交流活动</a></li>
+<li><a href="/academic#news">新闻报道</a></li>
+<li><a href="/academic#about">关于研究院</a></li>
+</ul>
+</div>
+</li>
+<li><a href="/community">社区</a></li>
+<li>
+<a href="/summit2019">峰会</a>
+<div class="sub-nav">
+<ul>
+<li><a href="/summit2019">2019峰会</a></li>
+<li><a href="/summit">2018峰会</a></li>
+</ul>
+</div>
+</li>
+<li>
+<a href="javascript:;">加入鲲云</a>
+<div class="sub-nav">
+<ul>
+<li><a href="/about">关于鲲云</a></li>
+<li><a href="/milestones">成长历程</a></li>
+<li><a href="/awards">团队荣誉</a></li>
+<li><a href="/news">新闻动态</a></li>
+<li><a href="/life">加入我们</a></li>
+</ul>
+</div>
+</li>
+<li class="search-nav d-none">
+<input type="text" class="top-search">
+<img src="/img/base/search.png" alt="搜索" class="search">
+</li>
+<li class="version">
+<a href="/en">EN</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="navbar-mobile d-block d-md-none clearfix">
+<div class="navbar-toggle">
+<div class="navbar-show">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="navbar-close">
+<img class="close" src="/img/base/close.png" alt="关闭">
+</div>
+</div>
+<img class="cr-logo" src="/img/base/logo.png" alt="鲲云logo">
+</div>
+<div class="swiper-container">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<a href="/product"><img src="upload/8689PNSWLmyVcAFz64W7JQmx.png" alt="Simpler AI"></a>
+</div>
+<div class="swiper-slide">
+<a href="/academic#collaboration"><img src="upload/FgokgFMi3wi6s-2nEzItdswi.jpg" alt="Corerain University Program"></a>
+</div>
+<div class="swiper-slide">
+<a href="/product"><img src="upload/I0Y4rlocbr-kHsA735VA9rRY.jpg" alt="Nebula Accelerator"></a>
+</div>
+<div class="swiper-slide">
+<a href="/product"><img src="upload/aIM6Bo8xKH_2w_jIoNh1QEEX.jpg" alt="Rainman Accelerator"></a>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</section>
+<section class="core">
+<div class="technology">
+<h3 class="title">技术和产品</h3>
+<h4 class="sub-title">我们提供超高性能的人工智能芯片和全球首款基于数据流引擎的AI开发平台</h4>
+</div>
+<div class="application-container container">
+<div class="application">
+<div class="img-info">
+<img class="before-reverse img-fluid" src="/img/index/technology_1.png" alt="定制数据流(CAISA)架构">
+<img class="reverse-img img-fluid" src="/img/index/technology_reversal_1.png" alt="定制数据流(CAISA)架构">
+</div>
+<a href="/caisa"><span>了解更多</span><img src="/img/base/right_arrow.png" alt="查看更多"></a>
+</div>
+<div class="application">
+<div class="img-info">
+<img class="before-reverse img-fluid" src="/img/index/technology_2.png?2019/3/27" alt="RainBuilder编译器">
+<img class="reverse-img img-fluid" src="/img/index/technology_reversal_2.png" alt="RainBuilder编译器">
+</div>
+<a href="/RainBuilder"><span>了解更多</span><img src="/img/base/right_arrow.png" alt="查看更多"></a>
+</div>
+</div>
+</section>
+<section class="scene">
+<h3 class="title">高性能架构芯片和高通用性编译器满足全场景AIoT应用落地需求</h3>
+<div class="scene-content">
+<div class="container">
+<div class="row">
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_title.png" alt="应用场景">
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_1.png" alt="航天">
+<div class="scene-name">航天</div>
+<div class="scene-intro">卫星、红外遥感图像分析</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_2.png" alt="教育">
+<div class="scene-name">教育</div>
+<div class="scene-intro">授课质量分析、远程课堂互动</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_3.png" alt="研发">
+<div class="scene-name">研发</div>
+<div class="scene-intro">科研院所定制化AI方案开发</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_4.png" alt="航空">
+<div class="scene-name">航空</div>
+<div class="scene-intro">大飞机传感器分析</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_5.png" alt="安防">
+<div class="scene-name">安防</div>
+<div class="scene-intro">人脸、行人、车辆动态识别检测实时人车目标搜索追踪</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_6.png" alt="新零售">
+<div class="scene-name">新零售</div>
+<div class="scene-intro">客流统计,无感支付,人脸动态识别检测,用户画像分类</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_7.png" alt="工业">
+<div class="scene-name">工业</div>
+<div class="scene-intro">智能车间,智能巡检,工业视频分析诊断</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_8.png" alt="金融">
+<div class="scene-name">金融</div>
+<div class="scene-intro">自主金融建模,风险分析,量化交易和金融建模</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_9.png" alt="物流">
+<div class="scene-name">物流</div>
+<div class="scene-intro">货物识别跟踪、无人机配送道路识别、红绿灯识别等</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_10.png" alt="自动驾驶">
+<div class="scene-name">自动驾驶</div>
+<div class="scene-intro">行人识别、车辆识别、障碍识别等</div>
+</div>
+<div class="scene-info col-6 col-md-4 col-xl-3">
+<img src="/img/index/scene_11.png" alt="医学">
+<div class="scene-name">医学</div>
+<div class="scene-intro">图像识别,辅助诊断</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="partner d-none">
+<div class="container">
+<h3 class="title">合作伙伴</h3>
+<div class="partner-border"></div>
+<div class="row">
+<ul class="partner-list clearfix">
+<li class="col-xs-6 col-sm-4 col-md-2"><img src="/img/index/partner_1.png" alt="中科九度"></li>
+<li class="col-xs-6 col-sm-4 col-md-2"><img src="/img/index/partner_2.png" alt="中国航天"></li>
+<li class="col-xs-6 col-sm-4 col-md-2"><img src="/img/index/partner_3.png" alt="中国商飞"></li>
+<li class="col-xs-6 col-sm-4 col-md-2"><img src="/img/index/partner_4.png" alt="中国南方电网"></li>
+<li class="col-xs-6 col-sm-4 col-md-2"><img src="/img/index/partner_5.png" alt="国家电网"></li>
+<li class="col-xs-6 col-sm-4 col-md-2"><img src="/img/index/partner_6.png" alt="上海浦东"></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="news">
+<h3 class="title">新闻动态</h3>
+<div class="container">
+<ul class="news-list">
+<li class="about-news">
+<a target="_blank" rel="nofollow" href="https://appdetail.netwin.cn/web/2019/04/95119d1a5c5f6d6a467ac208be3d5736.html?from=singlemessage&amp;isappinstalled=0">
+<div class="d-flex">
+<img class="d-none d-xl-block" src="upload/Fvz0-eFNfIKGO7MQeBMr_8Kd.jpg" alt="【深圳商报】中国IT产业校企合作大会为企业高校“搭鹊桥” 深圳软件业综合实力居全国第二">
+<div class="news-info">
+<div class="news-date">2019/4/14</div>
+<div class="other">
+<div class="news-title ellipsis">【深圳商报】中国IT产业校企合作大会为企业高校“搭鹊桥” 深圳软件业综合实力居全国第二</div>
+<div class="news-detail  ">
+4月14日，被视为“中国IT产业校企合作鹊桥会”的2019中国IT产业校企合作大会在深圳会展中心举行，科技创新企业们在展示最新科研技术和项目的同时，积极谋求与高校的合作。
+</div>
+<div class="more d-none d-xl-block">继续阅读</div>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="about-news">
+<a target="_blank" rel="nofollow" href="http://wb.sznews.com/PC/layout/201904/16/node_B02.html#content_634823">
+<div class="d-flex">
+<img class="d-none d-xl-block" src="upload/yMZavLcGeAqRTiw__fk-MIPn.jpg" alt="【深圳晚报】解密最热AI“芯”话题 全球人工智能应用创新峰会福田举行">
+<div class="news-info">
+<div class="news-date">2019/4/16</div>
+<div class="other">
+<div class="news-title ellipsis">【深圳晚报】解密最热AI“芯”话题 全球人工智能应用创新峰会福田举行</div>
+<div class="news-detail  ">
+4月9日，由深圳市科学技术协会、深圳市福田区科技创新局联合主办的第二届全球人工智能应用创新峰会在深圳五洲宾馆举行。深圳市人大常委会副主任、深圳市科协主席蒋宇扬，福田区委常委、副区长黄伟，深圳市源创力离岸创新中心总裁周路明等出席了会议。
+</div>
+<div class="more d-none d-xl-block">继续阅读</div>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="about-news">
+<a target="_blank" rel="nofollow" href="http://static.scms.sztv.com.cn/ysz/dsdb/ggpd/gqxwlb/28163764.shtml">
+<div class="d-flex">
+<img class="d-none d-xl-block" src="upload/lAZI1IIWhw0rmVFp7lumNIA7.png" alt="【壹深圳】福田：建设人工智能产业高地 激发深港合作区科创动能">
+<div class="news-info">
+<div class="news-date">2019/4/15</div>
+<div class="other">
+<div class="news-title ellipsis">【壹深圳】福田：建设人工智能产业高地 激发深港合作区科创动能</div>
+<div class="news-detail  ">
+</div>
+<div class="more d-none d-xl-block">继续阅读</div>
+</div>
+</div>
+</div>
+</a>
+</li>
+<li class="about-news">
+<a target="_blank" rel="nofollow" href="https://mp.weixin.qq.com/s/TpdcKJsg2e3hLxyV2RhduQ">
+<div class="d-flex">
+<img class="d-none d-xl-block" src="upload/bZGsbEmLyXe-LLKtShw4EfWa.jpg" alt="【 电子发烧友观察】算力+算法+数据三轮驱动 AI发展与生态落地如何破局？">
+<div class="news-info">
+<div class="news-date">2019/4/11</div>
+<div class="other">
+<div class="news-title ellipsis">【 电子发烧友观察】算力+算法+数据三轮驱动 AI发展与生态落地如何破局？</div>
+<div class="news-detail  ">
+到目前为止，AI芯片的发展已经进入了落地的实际阶段，各个领域的AI需求都需要AI芯片的支撑，作为一个备受关注的行业和领域，目前国内AI发展和产业生态落地情况究竟如何呢？
+</div>
+<div class="more d-none d-xl-block">继续阅读</div>
+</div>
+</div>
+</div>
+</a>
+</li>
+</ul>
+<a href="/news" class="more-news">
+点击查看更多新闻 <img class="d-none d-md-inline-block" src="/img/base/right_arrow.png" alt="点击查看更多">
+</a>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="row foot-info">
+<div class="col-12 col-lg-6 pr-lg-0">
+<div class="clearfix">
+<img class="logo float-left d-none d-lg-block" src="img/base/foot_logo.png" alt="鲲云科技">
+<div class="company-info float-left">
+<h3>深圳鲲云信息科技有限公司</h3>
+<h4>AI从“芯”开始 万物从此智能</h4>
+<div class="border-bottom d-block d-lg-none"></div>
+</div>
+</div>
+<ul class="foot-nav clearfix d-none d-lg-block">
+<li><a href="/caisa">核心技术</a></li>
+<li><a href="/product">产品</a></li>
+<li><a href="/solution">解决方案</a></li>
+<li><a href="/community">社区</a></li>
+<li><a href="/academic">研究院</a></li>
+<li><a href="/recruitment">加入鲲云</a></li>
+</ul>
+</div>
+<div class="foot-right col-12 col-lg-6 pl-lg-0">
+<div class="row">
+<div class="addr-info col-12 col-lg-7">
+<div class="contact">联系我们: contact@corerain.com</div>
+<ul class="addr">
+<li>深圳 0755-88917937</li>
+<li>深圳福田保税区市花路长富金茂大厦14层</li>
+<li>英国 UK</li>
+<li>Kemp House,152-160 City Road,London, EC1V 2NX</li>
+</ul>
+</div>
+<div class="addr-info-2 clearfix col-12 col-lg-5 pl-lg-0">
+<div class="row">
+<div class="social clearfix order-last order-lg-first">
+<div class="qrcode">
+<img src="./img/base/QRcode.png" alt="Wechat">
+</div>
+<div>
+<a class="text-hide" target="_blank" rel="nofollow" href="https://weibo.com/p/1006066571890240/home?from=page_100606&mod=TAB#place">Sina</a>
+</div>
+<div>
+<a class="text-hide" target="_blank" rel="nofollow" href="https://twitter.com/CorerainTech">twitter</a>
+</div>
+<div>
+<a class="text-hide" target="_blank" rel="nofollow" href="https://www.facebook.com/CorerainTech/">Facebook</a>
+</div>
+<div>
+<a class="text-hide" target="_blank" rel="nofollow" href="https://www.linkedin.com/company/corerain-technologies/?viewAsMember=true">LinkIn</a>
+</div>
+</div>
+<ul class="addr order-first order-lg-last">
+<li>上海 021-60554988</li>
+<li>上海浦东新区纳贤路800号科海大楼3层</li>
+<li>山东</li>
+<li>济南市高新区新泺大街奥盛大厦3号楼2003室</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-none d-lg-block">
+<ul class="copyright-info">
+<li class="d-none">法律申明</li>
+<li class="d-none">隐私保护</li>
+<li>©版权所有CORERAIN</li>
+<li>备案号:沪ICP备16045110号</li>
+</ul>
+</div>
+</div>
+<div class="d-block d-lg-none mobile-copyright">备案号:沪ICP备16045110号</div>
+</footer>
+</div>
+<div class="mobile-menu d-block d-md-none">
+<ul class="mobile-nav">
+<li></li>
+<li>
+<a class="main" href="http://www.corerain.com">
+<span class="circle"></span>
+<span>首页</span>
+</a>
+</li>
+<li>
+<a class="main hassub" href="javascript:;">
+<span class="circle"></span>
+<span>核心技术</span>
+<span class="more-control"><span class="h"></span><span class="h v"></span></span>
+</a>
+<ul class="more">
+<li><a href="/caisa">CAISA</a></li>
+<li><a href="/RainBuilder">RainBuilder</a></li>
+</ul>
+</li>
+<li>
+<a class="main hassub" href="javascript:;">
+<span class="circle"></span>
+<span>产品</span>
+<span class="more-control"><span class="h"></span><span class="h v"></span></span>
+</a>
+<ul class="more">
+<li><a href="/product">星空</a></li>
+<li><a href="/product">雨人</a></li>
+<li><a href="/platform">鲲云AI应用开发平台</a></li>
+</ul>
+</li>
+<li>
+<a class="main hassub" href="javascript:;">
+<span class="circle"></span>
+<span>解决方案</span>
+<span class="more-control"><span class="h"></span><span class="h v"></span></span>
+</a>
+<ul class="more">
+<li><a href="/solution#city">智慧城市</a></li>
+<li><a href="/solution#aerospace">航空航天</a></li>
+<li><a href="/solution#Fin-tech">智慧金融</a></li>
+<li><a href="/solution#monitoring">工业监控</a></li>
+</ul>
+</li>
+<li>
+<a class="main hassub" href="javascript:;">
+<span class="circle"></span>
+<span>研究院</span>
+<span class="more-control"><span class="h"></span><span class="h v"></span></span>
+</a>
+<ul class="more">
+<li><a href="/academic#research-fields">研究领域</a></li>
+<li><a href="/academic#collaboration">科研合作</a></li>
+<li><a href="/academic#events">交流活动</a></li>
+<li><a href="/academic#news">新闻报道</a></li>
+<li><a href="/academic#about">关于研究院</a></li>
+</ul>
+</li>
+<li>
+<a class="main" href="/community">
+<span class="circle"></span>
+<span>社区</span>
+</a>
+</li>
+<li>
+<a class="main" href="/summit2019">
+<span class="circle"></span>
+<span>峰会</span>
+</a>
+</li>
+<li>
+<a class="main hassub" href="javascript:;">
+<span class="circle"></span>
+<span>加入鲲云</span>
+<span class="more-control"><span class="h"></span><span class="h v"></span></span>
+</a>
+<ul class="more">
+<li><a href="/about">关于鲲云</a></li>
+<li><a href="/milestones">成长历程</a></li>
+<li><a href="/awards">团队荣誉</a></li>
+<li><a href="/news">新闻动态</a></li>
+<li><a href="/life">加入我们</a></li>
+</ul>
+</li>
+<li>
+<a class="main" href="/en">
+<span class="circle"></span>
+<span>EN</span>
+</a>
+</li>
+</ul>
+</div>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/swiper.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

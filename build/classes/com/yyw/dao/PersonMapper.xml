@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.yyw.dao.PersonMapper">
+
+
+	
+	<insert id="insertPerson" parameterType="person">
+		<selectKey keyProperty="person_id" order="AFTER"
+			resultType="int">
+			select LAST_INSERT_ID()
+		</selectKey>
+		INSERT INTO
+		person(person_name,person_sex,person_old,person_college,person_degree,person_position,person_profession,person_jobYear,person_team)
+		VALUES(#{person_name},#{person_sex},#{person_old},#{person_college},#{person_degree},#{person_position},#{person_profession},#{person_jobYear},#{person_team})
+	</insert>
+
+	<select id="selectAll" parameterType="string"
+		resultType="person">
+		select * from person where person_team = #{teamName}
+
+	</select>
+
+</mapper>
